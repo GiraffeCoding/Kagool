@@ -1,20 +1,19 @@
-const Accordion = (function() {
+const Carousel = (function() {
 
-    const loadBeers = () => {
+    loadBeers = () => {
         const fetchPromise = fetch("https://api.punkapi.com/v2/beers");
         fetchPromise.then(response => {
         return response.json();
+        }).then(beers => {
+        const names = beers.map(beer => beer.name).join("\n");
+        console.log(names);
         });
     };
 
-    const loadAccordion = () => {
+    imageSlider = function(images) {
         // initialize the slideshow here
         
         const newDiv = document.createElement("div");
-
-        const beers = loadBeers;
-
-        console.log(beers);
 
         // and give it some content
         const newContent = document.createTextNode("Hi there and greetings!");
@@ -28,13 +27,17 @@ const Accordion = (function() {
         currentDiv.append(newDiv);
         });
     };
-  
-    return {
-      loadBeers: loadBeers,
+
+    publicMethod = function() {
+        imageSlider();
     };
-  
-  })();
+
+    return {
+        publicMethod: publicMethod
+    };
+
+})();
 
 module.exports = {
-    Accordion: Accordion
+    Carousel: Carousel
 };

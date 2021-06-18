@@ -1,0 +1,19 @@
+.container {
+    max-width:1280px;
+    margin: 0 auto;
+    padding:10vh;
+    background:red;
+}
+
+
+.card_holder {
+    display:flex;
+    align-content: center;
+}
+
+
+.card {
+    border: 1px solid grey;
+    padding:10px;
+    
+}

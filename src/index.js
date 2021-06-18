@@ -1,5 +1,9 @@
-import {accordion } from './accordion';
+import {Carousel} from './carousel';
+import {Accordion} from './accordion';
 import './scss/style.scss';
 
 
-accordion.testMethod();
+
+Carousel.publicMethod();
+
+Accordion.loadBeers();
